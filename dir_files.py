@@ -1,13 +1,13 @@
 import os
 import string
 
-#task 1
+print("task 1")
 
 path = r"c:\Users\bekza\OneDrive\Документы\project"
 all = list(os.listdir(path))
 print(all)
 
-#task 2
+print("task 2")
 
 def check(path):
     if not os.path.exists(path):
@@ -31,7 +31,7 @@ def check(path):
 path=r"c:\Users\bekza\OneDrive\Документы\project"
 check(path)
 
-#task 3
+print("task 3")
 
 def analyze_path(path):
     if os.path.exists(path):
@@ -49,7 +49,7 @@ path=r"c:\Users\bekza\OneDrive\Документы\project"
 analyze_path(path)
 
 
-#task 4
+print("task 4")
 
 with open("text.txt") as f:
     data = f.read()  
@@ -57,7 +57,7 @@ with open("text.txt") as f:
 print(len(list(data.split("\n"))))
 f.close()
 
-#task 5
+print("task 5")
 
 def write_list_to_file(file_path,data):
     try:
@@ -74,7 +74,7 @@ data= ["apple",'ananas',"orange","Grapes"]
 write_list_to_file(file_path,data)
 
 
-#task 6
+print("task 6")
 
 def generate_text_files():
     filenames = [f"{letter}.txt" for letter in string.ascii_uppercase]
@@ -89,30 +89,24 @@ def generate_text_files():
             print(f"Error creating file '{filename}': {e}")
 generate_text_files()
 
-#task 7 
+print("task 7") 
 
 def copy_file(file1,file2):
 
-    try:
         with open(file1,'r') as copy: 
             cop=copy.read()
         with open (file2,'w') as copy:
             copy.write(cop)
 
-    except FileNotFoundError:
-        print(f"Error: File '{cop}' not found.")
 
-    except Exception as e:
-        print(f"Error: {e}")
 
 file1="text.txt"
 file2="text2.txt"
 copy_file(file1,file2)
 
-#task 8
+print("task 8")
 
 def delete(file):
-    try:
         if not os.path.exists(file):
             print(f"Error: File '{file}' does not exist.")
             return 
@@ -123,8 +117,5 @@ def delete(file):
 
         os.remove(file)
         print(f"File '{file}' has been deleted successfully.")
-    
-    except Exception as e:
-        print(f"Error: {e}")
 path="text3.txt"
 delete(path)
